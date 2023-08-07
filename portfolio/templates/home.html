@@ -1,0 +1,52 @@
+{% extends 'layout.html'%}
+{% block content %}
+
+{% load static %}
+
+<header class="row bg-black">
+    <div class="col-md-4"></div>
+    <img src="{% static 'portfolio/profileia.png' %}" alt=""alt="" style="width: 300px; height: 300px; border-radius: 80%;">
+    <div class="col-md-8 my-auto">
+        <h1> Soy <strong> Gino Huerta</strong></h1>
+        <h3>Soy Data Analyst Jr.</h3>
+        <p>¡Hola! Soy Gino, Analista de Datos Jr. y estudiante avanzado de Ciencia Política. Me presento como un apasionado por el poder de las estadísticas y la ciencia de datos.
+
+            Como Analista de Datos Jr., he desarrollado habilidades en la manipulación y análisis de datos utilizando Python, SQL y PowerBI para extraer información valiosa y crear visualizaciones eficaces y de valor.
+            
+            Mi formación en Ciencia Política me proporciona en mi trabajo cotidiano en la comprensión de fenómenos sociales complejos y me permite aplicar métodos cuantitativos en mi investigación académica y análisis político.
+            
+            Creo firmemente en el aprovechamiento del poder de los datos para transformarlos en soluciones tangibles.
+            
+            ¡Gracias por visitar mi portfolio!</p>
+        <a href="{% static 'portfolio/CV.pdf' %}" class="btn btn-primary btn-lg rounded-0 my-3">Descargar CV</a>
+    </div>
+
+</header>
+
+<div class="row my-4 text-center">
+
+    <h3>My Projects</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, aperiam?</p>
+  
+    {% for project in projects %}
+    <div class="col-md-4 p-4">
+      <div class="card bg-black card-project">
+        <img src="{{project.image.url }}" class="card-img-top" />
+  
+        <div class="card-body">
+  
+          <h2>{{ project.title }}</h2>
+          <p>{{ project.description }}</p>
+  
+          {% if project.url %}
+          <a href="{{project.url}}" class="btn btn-light rounded-0 btn-sm" target="_blank" rel="noreferrer">Visit the
+            Project</a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  
+  
+  {% endblock %}
