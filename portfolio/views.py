@@ -12,3 +12,4 @@ def DiaDeHoy(request):
     dia = datetime.datetime.now()
     documentodeTexto = f'Hoy es dia: <br> {dia}'
     return HttpResponse(documentodeTexto)
+
